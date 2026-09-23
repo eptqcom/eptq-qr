@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QR Code Generator</title>
+<!-- 引入开源二维码JS库，加载在页面内生成二维码 -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+<style>
+body{text-align:center;margin-top:50px;font-family:Arial;}
+#canvas{margin-top:20px;}
+</style>
+</head>
+<body>
+<h2>长期有效二维码</h2>
+<p>二维码内容：https://eptqcom.github.io/eptq-qr/</p>
+<canvas id="canvas"></canvas>
+<script>
+// 填入你的GitHub Pages链接
+const url = "https://eptqcom.github.io/eptq-qr/";
+QRCode.toCanvas(document.getElementById('canvas'), url, {width:400}, function(error){
+  if(error) console.error(error);
+  console.log('二维码生成成功！');
+})
+</script>
+</body>
+</html>
